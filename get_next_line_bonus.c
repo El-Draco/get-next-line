@@ -6,7 +6,7 @@
 /*   By: rriyas <rriyas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 22:07:22 by rriyas            #+#    #+#             */
-/*   Updated: 2021/10/23 03:09:38 by rriyas           ###   ########.fr       */
+/*   Updated: 2021/10/23 17:50:18 by rriyas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	*get_next_line(int fd)
 	long			pos;
 
 	line = NULL;
-	if (fd < 0)
+	if (fd < 0 || fd > 1023)
 		return (line);
 	buff = malloc(BUFFER_SIZE + 1);
 	parse_saved_string(&saved[fd], &line, &pos);
